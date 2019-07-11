@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "es2015",
+      "declaration": true,
+      "outDir": "./dist",
+      "removeComments": false,
+      "experimentalDecorators": true,      
+      "sourceMap": true,
+    },
+    "include": [
+      "src",
+      "src/observable-decorators"
+    ],
+    "exclude": ["node_modules", "**/__tests__/*","dist", "examples"]
+  }

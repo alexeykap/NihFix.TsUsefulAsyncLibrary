@@ -1,0 +1,43 @@
+{
+  "name": "nihfix.tsusefulasynclibrary",
+  "version": "1.0.0",
+  "description": "This library contains usefull decorators, extentions and base classes for work with Promises and Observables.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "build-examples":"webpack --config examples/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexeykap/NihFix.TsUsefulAsyncLibrary.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "TS",
+    "JavaScript",
+    "Js",
+    "Promise",
+    "Promises",
+    "Observable",
+    "Observables",
+    "RxJs"
+  ],
+  "author": "Aleksey Kapustyanenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexeykap/NihFix.TsUsefulAsyncLibrary/issues"
+  },
+  "homepage": "https://github.com/alexeykap/NihFix.TsUsefulAsyncLibrary#readme",
+  "dependencies": {
+    "rxjs": "^6.5.2"
+  },
+  "devDependencies": {
+    "browserfy": "^1.0.0",
+    "browserify": "^16.3.0",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5"
+  }
+}
