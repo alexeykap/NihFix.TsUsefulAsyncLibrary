@@ -1,1 +1,1 @@
-export {test,LogDecorator} from './tst'
+export { test, LogDecorator } from './tst'

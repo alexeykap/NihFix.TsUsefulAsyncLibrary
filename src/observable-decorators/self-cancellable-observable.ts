@@ -1,6 +1,6 @@
-import {Subject, Observable} from "../../node_modules/rxjs"
-import {pipe} from "../../node_modules/rxjs"
-import {takeUntil} from "../../node_modules/rxjs/operators"
+import { Subject, Observable } from "../../node_modules/rxjs"
+import { pipe } from "../../node_modules/rxjs"
+import { takeUntil } from "../../node_modules/rxjs/operators"
 
 
 /**
@@ -10,14 +10,14 @@ import {takeUntil} from "../../node_modules/rxjs/operators"
  * @export
  * @returns
  */
-export function SelfCancellableObservable(){
+export function SelfCancellableObservable() {
     return function (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<Function>) {
-        let func=descriptor.value;
-        let cancellationSubject=new Subject<boolean>();
-        descriptor.value=function(){
+        let func = descriptor.value;
+        let cancellationSubject = new Subject<boolean>();
+        descriptor.value = function () {
             cancellationSubject.next(true);
-            let originalResult=func.call(this,arguments);
-            return originalResult.pipe(takeUntil(cancellationSubject));             
+            let originalResult = func.call(this, arguments);
+            return originalResult.pipe(takeUntil(cancellationSubject));
         }
     }
 }

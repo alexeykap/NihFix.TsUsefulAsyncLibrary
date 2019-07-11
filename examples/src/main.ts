@@ -6,8 +6,8 @@ namespace xxx {
         let vvv = new myClass();
         vvv.longExecutionObservable().subscribe(
             (x) => console.log(`result: ${x}`),
-            (e)=>console.warn(`error: e`),
-            ()=>console.log("complete")
+            (e) => console.warn(`error: e`),
+            () => console.log("complete")
         );
     }
     export class myClass {
