@@ -1,10 +1,10 @@
 import { LogDecorator } from "../../dist";
-import { timer, Observable } from "../../node_modules/rxjs";
-import { SelfCancellableObservable } from "../../dist/observable-decorators"
-namespace xxx {
+import { timer, Observable, Subject } from "../../node_modules/rxjs";
+import { SelfCancellableObservable,TakeUntil } from "../../dist/observable-decorators"
+
     export function click() {
         let vvv = new myClass();
-        vvv.longExecutionObservable().subscribe(
+        vvv.longExecutionObservable2().subscribe(
             (x) => console.log(`result: ${x}`),
             (e) => console.warn(`error: e`),
             () => console.log("complete")
@@ -15,10 +15,15 @@ namespace xxx {
         returnFive() {
             return 5;
         }
+
+        static cancellable:Subject<boolean>=new Subject<boolean>();
+
+        
+
         @SelfCancellableObservable()
         longExecutionObservable(): Observable<Number> {
             return timer(3000);
         }
     }
-}
-document.getElementById("testButton").onclick = (ev) => xxx.click();
+
+document.getElementById("testButton").onclick = (ev) => click();
